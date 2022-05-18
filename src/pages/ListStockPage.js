@@ -121,7 +121,7 @@ const ListStockPage = () => {
                           className="btn"
                           onClick={() => deleteItem(_id, bankName)}
                           style={{ backgroundColor: "firebrick" }}
-                          disabled
+                          disabled //The delete is disabled because The Transaction list uses foreign Id i.e Object Id from Stock so when we deleted the stocks, the trasaction tickets that used foreign Id from stock was also deleted which resulted in error in transaction list page.
                         >
                           Delete
                         </button>
