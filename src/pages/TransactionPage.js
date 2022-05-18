@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Form from "../components/Form";
 import "../App.css";
+import StockForm from "../components/StockForm";
 
 const TransactionPage = () => {
   const [apiData, setApiData] = useState([]);
@@ -31,6 +32,7 @@ const TransactionPage = () => {
       placeholder: "Enter quantity",
       type: "number",
       required: true,
+      errorMessage: "Quantity is required !",
     },
     {
       id: 2,
@@ -39,6 +41,7 @@ const TransactionPage = () => {
       placeholder: "Enter Amount",
       type: "number",
       required: true,
+      errorMessage: "Amount is required !",
     },
   ];
 
@@ -98,7 +101,7 @@ const TransactionPage = () => {
             </div>
             {inputs.map((input) => {
               return (
-                <Form
+                <StockForm
                   {...input}
                   key={input.id}
                   value={values[input.name]}
