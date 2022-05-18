@@ -27,4 +27,5 @@ select {
   margin: 10px 0px;
   border: 1px solid grey;
   border-radius: 4px;
+  width: 400px;
 }
