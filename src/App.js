@@ -5,7 +5,6 @@ import ListStockPage from "./pages/ListStockPage";
 import ListTransactionPage from "./pages/ListTransaction";
 import LoginPage from "./pages/LoginPage";
 import StockRegisterPage from "./pages/StockRegisterPage";
-import TotalDatas from "./pages/TotalDatas";
 import TransactionPage from "./pages/TransactionPage";
 import UpdateStock from "./pages/UpdateStock";
 import UserRegister from "./pages/UserRegister";
@@ -28,7 +27,7 @@ function App() {
                 <Route path="updatestock" element={<UpdateStock />} />
               </Route>
               <Route path="stockregister" element={<StockRegisterPage />} />
-              <Route path="totaldatas" element={<TotalDatas />} />
+
               <Route path="register" element={<UserRegister />} />
             </Route>
           </Route>

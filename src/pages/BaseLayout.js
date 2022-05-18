@@ -104,7 +104,7 @@ export default function BaseLayout() {
       link: "stockregister",
       icon: <AddBusinessIcon />,
     },
-    // { id: 5, text: "Total Datas", link: "totaldatas" },
+
     {
       id: 5,
       text: "Register New User",
