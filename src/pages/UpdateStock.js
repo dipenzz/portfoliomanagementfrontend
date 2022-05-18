@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import StockForm from "../components/StockForm";
 import "../App.css";
+import { useNavigate } from "react-router-dom";
 
 const UpdateStock = () => {
   const [values, setValues] = useState({
@@ -10,6 +11,7 @@ const UpdateStock = () => {
     sellingRate: "",
     retailAmount: "",
   });
+  const navigate = useNavigate();
 
   const [ID, setID] = useState(null);
 
@@ -98,42 +100,39 @@ const UpdateStock = () => {
         authorization: localStorage.getItem("accessToken"),
       },
     });
+    navigate("/baselayout/stocklists");
   };
 
   return (
     <>
-      <div className="app">
-        <div className="form">
-          <form onSubmit={handleSubmit}>
-            <h1>Stock Register</h1>
-            <p
-              ref={errRef}
-              className={admin === "true" ? "offscreen" : "errmsg"}
-            >
-              Sorry Only Admins are Authorized to Update Stocks !
-            </p>
-            {inputs.map((input) => {
-              return (
-                <StockForm
-                  {...input}
-                  key={input.id}
-                  value={values[input.name]}
-                  onChange={handleChange}
-                />
-              );
-            })}
-            <button className="btn" type="submit">
-              Submit
-            </button>
-            <button
-              className="btn"
-              style={{ backgroundColor: "firebrick" }}
-              onClick={() => localStorage.setItem("Cancel", "cancel")}
-            >
-              Cancel
-            </button>
-          </form>
-        </div>
+      <div className="transactionForm">
+        <form onSubmit={handleSubmit}>
+          <h1>Stock Register</h1>
+          <p ref={errRef} className={admin === "true" ? "offscreen" : "errmsg"}>
+            Sorry Only Admins are Authorized to Update Stocks !
+          </p>
+          {inputs.map((input) => {
+            return (
+              <StockForm
+                {...input}
+                key={input.id}
+                value={values[input.name]}
+                onChange={handleChange}
+              />
+            );
+          })}
+          <button className="btn" type="submit">
+            Submit
+          </button>
+          <button
+            className="btn"
+            type="submit"
+            style={{ backgroundColor: "firebrick" }}
+            onClick={() => navigate("/baselayout/stocklists")}
+          >
+            Cancel
+          </button>
+        </form>
       </div>
     </>
   );
