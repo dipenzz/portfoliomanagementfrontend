@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 import StockForm from "../components/StockForm";
 
@@ -11,6 +12,7 @@ const StockRegisterPage = () => {
     sellingRate: "",
     retailAmount: "",
   });
+  const navigate = useNavigate();
 
   useEffect(() => {
     setAdmin(localStorage.getItem("isAdmin"));
@@ -27,6 +29,7 @@ const StockRegisterPage = () => {
       type: "text",
       label: "Stock Name :",
       required: true,
+      errorMessage: "Stock Name is required !",
     },
     {
       id: 2,
@@ -35,6 +38,7 @@ const StockRegisterPage = () => {
       type: "number",
       label: "Total Units :",
       required: true,
+      errorMessage: "Total Units is required !",
     },
     {
       id: 3,
@@ -43,6 +47,7 @@ const StockRegisterPage = () => {
       type: "number",
       label: "Buying Rate :",
       required: true,
+      errorMessage: "Buying Rate is required !",
     },
     {
       id: 4,
@@ -51,6 +56,7 @@ const StockRegisterPage = () => {
       type: "number",
       label: "Selling Rate :",
       required: true,
+      errorMessage: "Selling Rate is required !",
     },
     {
       id: 5,
@@ -59,6 +65,7 @@ const StockRegisterPage = () => {
       type: "number",
       label: "Retail Amount :",
       required: true,
+      errorMessage: "Retail Amount is required !",
     },
   ];
 
@@ -80,6 +87,7 @@ const StockRegisterPage = () => {
         authorization: localStorage.getItem("accessToken"),
       },
     });
+    navigate("/baselayout/stocklists");
   };
 
   return (
