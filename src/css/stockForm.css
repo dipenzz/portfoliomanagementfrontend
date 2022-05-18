@@ -1,0 +1,35 @@
+.stockFormInput {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.ball {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url("https://images.hdqwalls.com/download/cyberpunk-2077-minimal-4k-4b-1920x1080.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.btn {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  border: none;
+  background-color: rgb(2, 2, 121);
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}

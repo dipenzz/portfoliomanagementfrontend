@@ -1,0 +1,30 @@
+input {
+  padding: 15px;
+  margin: 10px 0px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 510;
+}
+
+.span {
+  font-size: 12px;
+  color: red;
+  margin-bottom: 4px;
+  display: none;
+}
+select {
+  padding: 15px;
+  margin: 10px 0px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
