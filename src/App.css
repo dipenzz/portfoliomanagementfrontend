@@ -17,6 +17,11 @@
   align-items: center;
 }
 
+.transactionForm {
+  display: flex;
+  justify-content: center;
+}
+
 form {
   background-color: white;
   padding: 8px 32px;
