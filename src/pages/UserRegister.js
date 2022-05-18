@@ -27,7 +27,7 @@ const UserRegister = () => {
       type: "text",
       required: true,
       errorMessage:
-        "Username should start with an letter, it should contain 4-16 characters !",
+        "Username should start with a letter, it should contain 4-16 characters !",
       pattern: "^[A-Za-z][A-Za-z0-9_]{4,16}$",
     },
     {
@@ -74,49 +74,51 @@ const UserRegister = () => {
   };
 
   return (
-    <div className="app">
-      <form onSubmit={handleSubmit}>
-        <h1>User Register Form</h1>
-        <p ref={errRef} className={admin === "true" ? "offscreen" : "errmsg"}>
-          Sorry Only Admins are Authorized to Add New Users !
-        </p>
-        {inputs.map((input) => {
-          return (
-            <StockForm
-              {...input}
-              key={input.id}
-              value={values[input.name]}
-              onChange={handleChange}
-            />
-          );
-        })}
-        <div className="radiotwo">
-          <label>isAdmin :</label>
-          <div className="radio">
-            <input
-              type="radio"
-              name="isAdmin"
-              style={{ cursor: "pointer" }}
-              value={false}
-              onChange={handleChange}
-              checked={values.isAdmin === false}
-            />
-            <label style={{ padding: "4px" }}>false</label>
-            <input
-              type="radio"
-              name="isAdmin"
-              style={{ cursor: "pointer" }}
-              value={true}
-              onChange={handleChange}
-              checked={values.isAdmin === true}
-            />
-            <label style={{ padding: "4px" }}>true</label>
+    <div className="appTwo">
+      <div className="form">
+        <form onSubmit={handleSubmit}>
+          <h1>User Register Form</h1>
+          <p ref={errRef} className={admin === "true" ? "offscreen" : "errmsg"}>
+            Sorry Only Admins are Authorized to Add New Users !
+          </p>
+          {inputs.map((input) => {
+            return (
+              <StockForm
+                {...input}
+                key={input.id}
+                value={values[input.name]}
+                onChange={handleChange}
+              />
+            );
+          })}
+          <div className="radiotwo">
+            <label>isAdmin :</label>
+            <div className="radio">
+              <input
+                type="radio"
+                name="isAdmin"
+                style={{ cursor: "pointer" }}
+                value={false}
+                onChange={handleChange}
+                checked={values.isAdmin === false}
+              />
+              <label style={{ padding: "4px" }}>false</label>
+              <input
+                type="radio"
+                name="isAdmin"
+                style={{ cursor: "pointer" }}
+                value={true}
+                onChange={handleChange}
+                checked={values.isAdmin === true}
+              />
+              <label style={{ padding: "4px" }}>true</label>
+            </div>
           </div>
-        </div>
-        <button className="btn" type="submit">
-          Submit
-        </button>
-      </form>
+          <button className="btn" type="submit">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
